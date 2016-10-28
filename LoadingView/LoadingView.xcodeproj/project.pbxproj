@@ -12,6 +12,9 @@
 		043296191DC3775C00D9173E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 043296171DC3775C00D9173E /* Main.storyboard */; };
 		0432961B1DC3775C00D9173E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0432961A1DC3775C00D9173E /* Assets.xcassets */; };
 		0432961E1DC3775C00D9173E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0432961C1DC3775C00D9173E /* LaunchScreen.storyboard */; };
+		043296271DC379B400D9173E /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043296261DC379B400D9173E /* LoadingView.swift */; };
+		0432962A1DC37A5F00D9173E /* UIColor-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043296291DC37A5F00D9173E /* UIColor-Extension.swift */; };
+		0432962F1DC3826E00D9173E /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 0432962E1DC3826E00D9173E /* UIView+Extension.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +25,11 @@
 		0432961A1DC3775C00D9173E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0432961D1DC3775C00D9173E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0432961F1DC3775C00D9173E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		043296261DC379B400D9173E /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		043296291DC37A5F00D9173E /* UIColor-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIColor-Extension.swift"; path = "LoadingView/UIColor-Extension.swift"; sourceTree = "<group>"; };
+		0432962C1DC3826D00D9173E /* LoadingView-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LoadingView-Bridging-Header.h"; sourceTree = "<group>"; };
+		0432962D1DC3826E00D9173E /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
+		0432962E1DC3826E00D9173E /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +62,8 @@
 		043296121DC3775C00D9173E /* LoadingView */ = {
 			isa = PBXGroup;
 			children = (
+				0432962B1DC3820B00D9173E /* Tools */,
+				043296251DC3790800D9173E /* LoadingView */,
 				043296131DC3775C00D9173E /* AppDelegate.swift */,
 				043296151DC3775C00D9173E /* ViewController.swift */,
 				043296171DC3775C00D9173E /* Main.storyboard */,
@@ -62,6 +72,25 @@
 				0432961F1DC3775C00D9173E /* Info.plist */,
 			);
 			path = LoadingView;
+			sourceTree = "<group>";
+		};
+		043296251DC3790800D9173E /* LoadingView */ = {
+			isa = PBXGroup;
+			children = (
+				043296261DC379B400D9173E /* LoadingView.swift */,
+			);
+			path = LoadingView;
+			sourceTree = "<group>";
+		};
+		0432962B1DC3820B00D9173E /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				043296291DC37A5F00D9173E /* UIColor-Extension.swift */,
+				0432962D1DC3826E00D9173E /* UIView+Extension.h */,
+				0432962E1DC3826E00D9173E /* UIView+Extension.m */,
+				0432962C1DC3826D00D9173E /* LoadingView-Bridging-Header.h */,
+			);
+			name = Tools;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -96,6 +125,7 @@
 				TargetAttributes = {
 					0432960F1DC3775C00D9173E = {
 						CreatedOnToolsVersion = 8.0;
+						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -136,8 +166,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0432962F1DC3826E00D9173E /* UIView+Extension.m in Sources */,
 				043296161DC3775C00D9173E /* ViewController.swift in Sources */,
+				0432962A1DC37A5F00D9173E /* UIColor-Extension.swift in Sources */,
 				043296141DC3775C00D9173E /* AppDelegate.swift in Sources */,
+				043296271DC379B400D9173E /* LoadingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,10 +291,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = LoadingView/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = YY.LoadingView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "LoadingView/LoadingView-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -270,10 +306,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = LoadingView/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = YY.LoadingView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "LoadingView/LoadingView-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -297,6 +335,7 @@
 				043296241DC3775D00D9173E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
