@@ -82,7 +82,7 @@ class LoadingView: UIView {
         
         round3.centerX = round2.centerX + 20
         round3.centerY = round2.centerY
-        
+         
         startAnimation()
     }
     
